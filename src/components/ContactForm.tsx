@@ -18,12 +18,12 @@ export function ContactForm() {
   }
 
   const inputClass =
-    "mt-2 w-full rounded-xl border border-[rgba(91,59,39,0.2)] bg-white/80 px-4 py-3 text-sm text-foreground placeholder:text-[#9a806a] focus:border-[rgba(185,133,75,0.7)] focus:outline-none transition-colors";
+    "mt-2 w-full min-h-11 rounded-xl border border-[rgba(91,59,39,0.2)] bg-white/80 px-4 py-3 text-base text-foreground placeholder:text-[#9a806a] focus:border-[rgba(185,133,75,0.7)] focus:outline-none transition-colors sm:text-sm";
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="card-light space-y-5 rounded-2xl p-6 md:p-7"
+      className="card-light space-y-5 rounded-2xl p-5 sm:p-6 md:p-7"
     >
       <div>
         <label

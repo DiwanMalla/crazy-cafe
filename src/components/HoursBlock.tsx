@@ -1,4 +1,4 @@
-import { hours, hoursBlurb } from "@/content/hours";
+import { hoursBlurb } from "@/content/hours";
 import { formatAddress, site } from "@/content/site";
 
 type HoursBlockProps = {
@@ -6,75 +6,40 @@ type HoursBlockProps = {
 };
 
 export function HoursBlock({ showMapLink = true }: HoursBlockProps) {
-  const dayNames = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  const todayName = dayNames[new Date().getDay()];
-
   return (
-    <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
-      <div className="card-warm rounded-2xl p-6 md:p-8">
+    <div className="grid gap-5 sm:gap-6 md:grid-cols-2 md:gap-8 lg:gap-12">
+      <div className="card-warm rounded-2xl p-5 sm:p-6 md:p-8">
         <p className="section-label">Opening Hours</p>
-        <h2 className="heading-display mt-4 text-3xl text-parchment md:text-4xl">
-          {hoursBlurb}
+        <h2 className="heading-display mt-3 text-[clamp(1.6rem,5vw,2.25rem)] text-parchment sm:mt-4">
+          Every day,
+          <br />
+          7:00 AM – 2:00 PM
         </h2>
-
-        <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-caramel/30 bg-bark px-3 py-1.5 text-xs font-semibold text-caramel">
-          <span className="h-2 w-2 rounded-full bg-caramel animate-pulse" />
-          Open 7 Days a Week
-        </div>
-
-        <ul className="mt-8 space-y-1">
-          {hours.map((entry) => {
-            const isToday = entry.day === todayName;
-            return (
-              <li
-                key={entry.day}
-                className={`flex items-center justify-between gap-4 border-b py-3 text-sm transition-colors ${isToday ? "border-caramel/40" : "border-border"}`}
-              >
-                <span
-                  className={`flex items-center gap-2.5 font-medium ${isToday ? "text-caramel" : "text-stone"}`}
-                >
-                  {entry.day}
-                  {isToday && (
-                    <span className="rounded-full bg-caramel/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-caramel">
-                      Today
-                    </span>
-                  )}
-                </span>
-                <span
-                  className={
-                    isToday ? "font-semibold text-caramel" : "text-warm-gray"
-                  }
-                >
-                  {entry.closed ? "Closed" : `${entry.open} – ${entry.close}`}
-                </span>
-              </li>
-            );
-          })}
-        </ul>
+        <p className="mt-3 text-sm leading-relaxed text-stone sm:mt-4">
+          {hoursBlurb}
+        </p>
+        <p className="mt-6 text-sm text-cream/80 sm:mt-8">
+          Kitchen and coffee bar open the full service window. Last orders
+          before close.
+        </p>
       </div>
 
-      <div className="card-light rounded-2xl p-6 md:p-8">
+      <div className="card-light rounded-2xl p-5 sm:p-6 md:p-8">
         <p className="section-label">Find Us</p>
-        <h2 className="heading-display mt-4 text-3xl text-foreground md:text-4xl">
-          42 Neon Lane,
+        <h2 className="heading-display mt-3 text-[clamp(1.6rem,5vw,2.25rem)] text-foreground sm:mt-4">
+          {site.address.street},
           <br />
-          Surry Hills
+          {site.address.suburb}
         </h2>
 
-        <div className="mt-6 space-y-4">
+        <div className="mt-5 space-y-4 sm:mt-6">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-[#7b6350]">
               Address
             </p>
-            <p className="mt-1 text-base text-foreground">{formatAddress()}</p>
+            <p className="mt-1 text-sm text-foreground sm:text-base">
+              {formatAddress()}
+            </p>
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-[#7b6350]">
@@ -82,7 +47,7 @@ export function HoursBlock({ showMapLink = true }: HoursBlockProps) {
             </p>
             <a
               href={site.phoneHref}
-              className="mt-1 block text-base text-foreground transition-colors hover:text-[#8f623a]"
+              className="mt-1 block text-sm text-foreground transition-colors hover:text-[#8f623a] sm:text-base"
             >
               {site.phone}
             </a>
@@ -93,23 +58,23 @@ export function HoursBlock({ showMapLink = true }: HoursBlockProps) {
             </p>
             <a
               href={`mailto:${site.email}`}
-              className="mt-1 block text-base text-[#5d4738] transition-colors hover:text-[#8f623a]"
+              className="mt-1 block break-all text-sm text-[#5d4738] transition-colors hover:text-[#8f623a] sm:text-base"
             >
               {site.email}
             </a>
           </div>
         </div>
 
-        {showMapLink && (
+        {showMapLink ? (
           <a
             href={site.mapsUrl}
             target="_blank"
             rel="noreferrer"
-            className="btn-primary mt-8 inline-block"
+            className="btn-primary mt-6 w-full sm:mt-8 sm:w-auto"
           >
-            Open in Google Maps →
+            Open in Maps
           </a>
-        )}
+        ) : null}
       </div>
     </div>
   );

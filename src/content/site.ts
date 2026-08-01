@@ -1,6 +1,6 @@
 export const site = {
   name: "Crazy Cafe",
-  tagline: "Open 7am to 2pm. Always loud. Never boring.",
+  tagline: "Specialty coffee and all-day brunch in Surry Hills — open daily until 2pm.",
   headline: "Bold mornings. Loud coffee.",
   description:
     "Crazy Cafe is a daytime coffee spot for early risers, lunch crowds, and anyone who wants their espresso with a side of energy.",
@@ -30,36 +30,39 @@ export const site = {
   },
   features: [
     {
-      title: "Specialty Espresso Bar",
-      description: "Pours from 7:00 AM daily. Ethically sourced beans, pulled loud and proud.",
+      title: "Specialty Espresso",
+      description:
+        "Pours from 7:00 AM daily. Ethically sourced beans, pulled with care.",
     },
     {
-      title: "All-Day Kitchen",
-      description: "Smash burgers, chilli scrambles, and avocado toasties served fresh until 2:00 PM.",
+      title: "Brunch Kitchen",
+      description:
+        "Eggs, toasties, smash burgers, and more — fresh until 2:00 PM.",
     },
     {
       title: "Walk-ins Welcome",
-      description: "No reservations needed. Grab a table inside, sit outdoors, or take away.",
+      description:
+        "No reservations. Grab a table inside, sit outdoors, or take away.",
     },
   ],
   faqs: [
     {
       q: "What are your opening hours?",
-      a: "We are open 7 days a week from 7:00 AM to 2:00 PM."
+      a: "We are open 7 days a week from 7:00 AM to 2:00 PM.",
     },
     {
       q: "Do I need a table reservation?",
-      a: "No reservations needed! We operate strictly on a walk-in basis."
+      a: "No reservations needed — we operate on a walk-in basis.",
     },
     {
       q: "Do you offer vegan or gluten-free options?",
-      a: "Yes! We have oat/almond milk, gluten-free brownies, acai bowls, and customizable meals."
+      a: "Yes. Ask for oat or almond milk, and check the menu for gluten-free and vegan tags.",
     },
     {
       q: "Is takeaway available?",
-      a: "Yes, full coffee and food takeaway menu is available at the counter."
-    }
-  ]
+      a: "Yes — full coffee and food takeaway is available at the counter.",
+    },
+  ],
 } as const;
 
 export function formatAddress(): string {

@@ -58,17 +58,17 @@ function Stars({ rating }: { rating: number }) {
 export function Reviews() {
   return (
     <section className="border-t border-border bg-[linear-gradient(180deg,#f7efe3_0%,#f2e4d3_100%)]">
-      <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-        <div className="mb-12 text-center">
+      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-5 sm:py-20 md:px-8 md:py-28">
+        <div className="mb-8 text-center sm:mb-12">
           <p className="section-label">Testimonials</p>
-          <h2 className="heading-display mt-4 text-4xl text-foreground md:text-5xl">
+          <h2 className="heading-display mt-3 text-[clamp(1.85rem,6vw,3rem)] text-foreground sm:mt-4">
             What Our Guests Say
           </h2>
-          <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-[#6a5341] md:text-base">
+          <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-[#6a5341] sm:mt-4 md:text-base">
             Honest reviews from the Surry Hills community who come back every
             morning.
           </p>
-          <div className="mt-7 inline-flex items-center gap-3 rounded-full border border-[rgba(185,133,75,0.4)] bg-[rgba(255,248,238,0.9)] px-5 py-2.5 shadow-[0_10px_24px_-18px_rgba(40,22,12,0.6)]">
+          <div className="mt-5 inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-[rgba(185,133,75,0.4)] bg-[rgba(255,248,238,0.9)] px-4 py-2.5 shadow-[0_10px_24px_-18px_rgba(40,22,12,0.6)] sm:mt-7 sm:gap-3 sm:px-5">
             <Stars rating={5} />
             <span className="text-sm font-semibold text-foreground">
               4.9 out of 5
@@ -77,11 +77,11 @@ export function Reviews() {
           </div>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {reviews.map((review) => (
+        <div className="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {reviews.slice(0, 3).map((review) => (
             <div
               key={review.id}
-              className="card-light flex flex-col gap-4 rounded-2xl p-6"
+              className="flex flex-col gap-4 rounded-2xl border border-[rgba(91,59,39,0.1)] bg-[linear-gradient(180deg,#fffaf3_0%,#f8eddd_100%)] p-5 sm:p-6"
             >
               <Stars rating={review.rating} />
 
