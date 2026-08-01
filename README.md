@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Crazy Cafe
 
-## Getting Started
+Late-night marketing site for **Crazy Cafe** — a neon diner coffee den built with Next.js.
 
-First, run the development server:
+Open late. Always loud. Never boring.
+
+## Features
+
+- Home page with full-bleed hero, vibe section, and hours/location
+- About page with cafe story
+- Categorized menu (coffee, bites, sweets, cold drinks)
+- Contact page with mailto form, hours, and map link
+- Static content modules — edit copy without touching page components
+- Responsive layout with mobile nav
+- Neon diner visual identity (ink / charcoal / electric lime)
+
+## Stack
+
+- [Next.js](https://nextjs.org) 16 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- `next/font` (Bebas Neue + DM Sans)
+
+No backend or database for v1 — everything is static.
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command         | Description              |
+| --------------- | ------------------------ |
+| `npm run dev`   | Start local dev server   |
+| `npm run build` | Production build         |
+| `npm run start` | Serve production build   |
+| `npm run lint`  | Run ESLint               |
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  app/           # Routes: /, /about, /menu, /contact
+  components/    # Header, footer, menu, hours, contact form
+  content/       # Editable site copy, hours, and menu data
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Edit cafe content
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| File | What it controls |
+| ---- | ---------------- |
+| [`src/content/site.ts`](src/content/site.ts) | Name, tagline, address, phone, about copy |
+| [`src/content/hours.ts`](src/content/hours.ts) | Opening hours |
+| [`src/content/menu.ts`](src/content/menu.ts) | Menu categories and items |
 
-## Deploy on Vercel
+## Pages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Route | Purpose |
+| ----- | ------- |
+| `/` | Hero, vibe, hours & location |
+| `/about` | Cafe story |
+| `/menu` | Full menu by category |
+| `/contact` | Enquiry form + hours + map |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deploy
+
+Deploy on [Vercel](https://vercel.com/new):
+
+```bash
+npx vercel
+```
+
+Or connect the [GitHub repo](https://github.com/DiwanMalla/crazy-cafe) in the Vercel dashboard for automatic previews and production deploys.
+
+## License
+
+Private project — all rights reserved.
