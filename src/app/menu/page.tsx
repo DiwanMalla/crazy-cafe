@@ -5,7 +5,7 @@ import { site } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Menu",
-  description: `Coffee, bites, and late-night fuel at ${site.name}.`,
+  description: `Coffee, bites, and lunch fuel at ${site.name}.`,
 };
 
 export default function MenuPage() {

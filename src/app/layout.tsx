@@ -18,7 +18,7 @@ const body = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: `${site.name} — Late-night coffee den`,
+    default: `${site.name} — Bold mornings, loud coffee`,
     template: `%s · ${site.name}`,
   },
   description: site.description,

@@ -6,10 +6,11 @@ import { site } from "@/content/site";
 export default function HomePage() {
   return (
     <>
+      {/* Hero Section */}
       <section className="relative min-h-[100svh] overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=2400&q=80"
-          alt="Barista pouring espresso in a dimly lit cafe"
+          alt="Barista pouring specialty espresso in a dimly lit cafe"
           fill
           priority
           className="object-cover object-center"
@@ -33,39 +34,79 @@ export default function HomePage() {
               href="/menu"
               className="bg-lime px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.16em] text-ink transition-colors hover:bg-lime-dim"
             >
-              View menu
+              Explore Menu
             </Link>
             <Link
               href="/contact"
               className="border border-cream/40 px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.16em] text-cream transition-colors hover:border-lime hover:text-lime"
             >
-              Find us
+              Location & Hours
             </Link>
           </div>
         </div>
       </section>
 
+      {/* Feature Highlights Grid */}
       <section className="border-t border-border bg-charcoal">
-        <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
-          <p className="text-xs uppercase tracking-[0.18em] text-lime">
-            The vibe
-          </p>
-          <h2 className="mt-3 max-w-2xl font-display text-4xl tracking-wide text-cream md:text-6xl">
-            A coffee den for people who refuse to call it a night
-          </h2>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-cream-muted md:text-lg">
-            {site.description}
-          </p>
-          <Link
-            href="/about"
-            className="mt-8 inline-flex text-xs font-semibold uppercase tracking-[0.16em] text-lime transition-colors hover:text-cream"
-          >
-            Our story →
-          </Link>
+        <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-20">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {site.features.map((feature, i) => (
+              <div
+                key={feature.title}
+                className="border border-border/80 bg-ink/60 p-6 transition-all hover:border-lime/40"
+              >
+                <span className="font-display text-2xl text-lime">0{i + 1}</span>
+                <h3 className="mt-2 font-display text-2xl text-cream">
+                  {feature.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-cream-muted">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
+      {/* The Vibe Section */}
       <section className="border-t border-border">
+        <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div>
+              <p className="text-xs uppercase tracking-[0.18em] text-lime">
+                The Vibe
+              </p>
+              <h2 className="mt-3 font-display text-4xl tracking-wide text-cream sm:text-5xl md:text-6xl">
+                A coffee den for people who refuse to call it a night
+              </h2>
+              <p className="mt-6 text-base leading-relaxed text-cream-muted md:text-lg">
+                {site.description}
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Link
+                  href="/about"
+                  className="inline-flex items-center gap-2 border border-lime/50 px-5 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-lime transition-colors hover:bg-lime hover:text-ink"
+                >
+                  Read Our Story &rarr;
+                </Link>
+              </div>
+            </div>
+
+            <div className="relative aspect-[4/3] overflow-hidden border border-border">
+              <Image
+                src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80"
+                alt="Cozy cafe interior with coffee brewing"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Hours & Location Section */}
+      <section className="border-t border-border bg-charcoal">
         <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
           <HoursBlock />
         </div>

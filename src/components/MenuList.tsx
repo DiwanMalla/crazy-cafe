@@ -28,15 +28,30 @@ export function MenuList({ animate = false }: MenuListProps) {
             {category.items.map((item) => (
               <li
                 key={item.name}
-                className="grid gap-2 py-5 md:grid-cols-[1fr_auto] md:items-baseline md:gap-8"
+                className="grid gap-3 py-5 md:grid-cols-[1fr_auto] md:items-baseline md:gap-8"
               >
                 <div>
-                  <h3 className="text-lg text-cream">{item.name}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-cream-muted">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <h3 className="text-lg font-medium text-cream">{item.name}</h3>
+                    {item.popular && (
+                      <span className="rounded-full bg-lime/15 border border-lime/30 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-lime">
+                        ★ Popular
+                      </span>
+                    )}
+                    {item.tags?.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full bg-cream/10 px-2 py-0.5 text-[10px] font-medium text-cream-muted"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="mt-1.5 text-sm leading-relaxed text-cream-muted">
                     {item.description}
                   </p>
                 </div>
-                <p className="font-display text-xl tracking-wide text-lime">
+                <p className="font-display text-2xl tracking-wide text-lime">
                   {item.price}
                 </p>
               </li>

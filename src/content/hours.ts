@@ -6,13 +6,13 @@ export type DayHours = {
 };
 
 export const hours: DayHours[] = [
-  { day: "Monday", open: "7:00 AM", close: "11:00 PM" },
-  { day: "Tuesday", open: "7:00 AM", close: "11:00 PM" },
-  { day: "Wednesday", open: "7:00 AM", close: "12:00 AM" },
-  { day: "Thursday", open: "7:00 AM", close: "12:00 AM" },
-  { day: "Friday", open: "7:00 AM", close: "1:00 AM" },
-  { day: "Saturday", open: "8:00 AM", close: "1:00 AM" },
-  { day: "Sunday", open: "8:00 AM", close: "10:00 PM" },
+  { day: "Monday", open: "7:00 AM", close: "2:00 PM" },
+  { day: "Tuesday", open: "7:00 AM", close: "2:00 PM" },
+  { day: "Wednesday", open: "7:00 AM", close: "2:00 PM" },
+  { day: "Thursday", open: "7:00 AM", close: "2:00 PM" },
+  { day: "Friday", open: "7:00 AM", close: "2:00 PM" },
+  { day: "Saturday", open: "7:00 AM", close: "2:00 PM" },
+  { day: "Sunday", open: "7:00 AM", close: "2:00 PM" },
 ];
 
-export const hoursBlurb = "Open early. Stay late. Seven days a week.";
+export const hoursBlurb = "Open 7:00 AM – 2:00 PM. Seven days a week.";

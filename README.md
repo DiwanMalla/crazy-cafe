@@ -1,8 +1,8 @@
 # Crazy Cafe
 
-Late-night marketing site for **Crazy Cafe** — a neon diner coffee den built with Next.js.
+Daytime marketing site for **Crazy Cafe** — a neon-energy cafe open 7am to 2pm, built with Next.js.
 
-Open late. Always loud. Never boring.
+Bold mornings. Loud coffee.
 
 ## Features
 

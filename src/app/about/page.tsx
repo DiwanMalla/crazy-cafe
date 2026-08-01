@@ -5,7 +5,7 @@ import { site } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "About",
-  description: `The story behind ${site.name} — a late-night coffee den in Surry Hills.`,
+  description: `The story behind ${site.name} — a daytime coffee spot in Surry Hills.`,
 };
 
 export default function AboutPage() {
