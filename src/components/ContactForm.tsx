@@ -10,41 +10,45 @@ export function ContactForm() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const subject = encodeURIComponent(`Crazy Cafe enquiry from ${name}`);
+    const subject = encodeURIComponent(`${site.name} enquiry from ${name}`);
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\n\n${message}`,
     );
     window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
   }
 
+  const inputClass =
+    "mt-2 w-full rounded-xl border border-[rgba(91,59,39,0.2)] bg-white/80 px-4 py-3 text-sm text-foreground placeholder:text-[#9a806a] focus:border-[rgba(185,133,75,0.7)] focus:outline-none transition-colors";
+
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-5 rounded-sm border border-border bg-charcoal p-6 md:p-8"
+      className="card-light space-y-5 rounded-2xl p-6 md:p-7"
     >
       <div>
         <label
           htmlFor="name"
-          className="block text-xs uppercase tracking-[0.16em] text-cream-muted"
+          className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#7b6350]"
         >
-          Name
+          Your Name
         </label>
         <input
           id="name"
           name="name"
           required
           value={name}
-          onChange={(event) => setName(event.target.value)}
-          className="mt-2 w-full border border-border bg-ink px-4 py-3 text-sm text-cream placeholder:text-cream-muted/50"
-          placeholder="Your name"
+          onChange={(e) => setName(e.target.value)}
+          className={inputClass}
+          placeholder="Sarah Smith"
         />
       </div>
+
       <div>
         <label
           htmlFor="email"
-          className="block text-xs uppercase tracking-[0.16em] text-cream-muted"
+          className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#7b6350]"
         >
-          Email
+          Email Address
         </label>
         <input
           id="email"
@@ -52,15 +56,16 @@ export function ContactForm() {
           type="email"
           required
           value={email}
-          onChange={(event) => setEmail(event.target.value)}
-          className="mt-2 w-full border border-border bg-ink px-4 py-3 text-sm text-cream placeholder:text-cream-muted/50"
-          placeholder="you@email.com"
+          onChange={(e) => setEmail(e.target.value)}
+          className={inputClass}
+          placeholder="hello@example.com"
         />
       </div>
+
       <div>
         <label
           htmlFor="message"
-          className="block text-xs uppercase tracking-[0.16em] text-cream-muted"
+          className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#7b6350]"
         >
           Message
         </label>
@@ -70,20 +75,19 @@ export function ContactForm() {
           required
           rows={5}
           value={message}
-          onChange={(event) => setMessage(event.target.value)}
-          className="mt-2 w-full resize-y border border-border bg-ink px-4 py-3 text-sm text-cream placeholder:text-cream-muted/50"
-          placeholder="Bookings, catering, or just say hey…"
+          onChange={(e) => setMessage(e.target.value)}
+          className={`${inputClass} resize-y`}
+          placeholder="Catering enquiry, event, or just saying hi…"
         />
       </div>
-      <button
-        type="submit"
-        className="w-full bg-lime px-5 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-ink transition-colors hover:bg-lime-dim"
-      >
-        Send via email
+
+      <button type="submit" className="btn-primary w-full text-center">
+        Send via Email
       </button>
-      <p className="text-xs leading-relaxed text-cream-muted">
-        Opens your email app with the message ready to send. No spam, no
-        backend.
+
+      <p className="text-xs leading-relaxed text-[#6f5847]">
+        Opens your mail app with the message ready to send. No spam, no backend
+        — your message goes direct to us.
       </p>
     </form>
   );
