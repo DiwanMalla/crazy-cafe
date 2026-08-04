@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import { MenuCategoryNav } from "@/components/MenuCategoryNav";
 import { MenuList } from "@/components/MenuList";
-import { menuCategories } from "@/content/menu";
 import { site } from "@/content/site";
 import Image from "next/image";
 import Link from "next/link";
@@ -27,20 +27,7 @@ export default function MenuPage() {
               today&apos;s specials and off-menu seasonal drinks.
             </p>
 
-            <nav
-              className="animate-fade-up delay-2 mt-8 flex gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] sm:mt-10 sm:flex-wrap sm:overflow-visible [&::-webkit-scrollbar]:hidden"
-              aria-label="Menu categories"
-            >
-              {menuCategories.map((category) => (
-                <a
-                  key={category.id}
-                  href={`#${category.id}`}
-                  className="shrink-0 rounded-full border border-[rgba(242,224,194,0.35)] bg-[rgba(255,255,255,0.04)] px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-honey transition-colors hover:border-honey hover:bg-[rgba(248,224,194,0.1)]"
-                >
-                  {category.name}
-                </a>
-              ))}
-            </nav>
+            <MenuCategoryNav />
           </div>
         </div>
 

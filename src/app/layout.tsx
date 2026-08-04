@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
-import { SiteFooter } from "@/components/SiteFooter";
-import { SiteHeader } from "@/components/SiteHeader";
+import { ConvexClientProvider } from "@/components/ConvexClientProvider";
 import { site } from "@/content/site";
 import "./globals.css";
 
@@ -36,9 +35,7 @@ export default function RootLayout({
       className={`${display.variable} ${body.variable} h-full`}
     >
       <body className="flex min-h-full flex-col bg-background font-sans text-foreground antialiased">
-        <SiteHeader />
-        <main className="flex-1">{children}</main>
-        <SiteFooter />
+        <ConvexClientProvider>{children}</ConvexClientProvider>
       </body>
     </html>
   );

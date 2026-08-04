@@ -1,13 +1,30 @@
-import { menuCategories } from "@/content/menu";
+"use client";
+
+import { useQuery } from "convex/react";
+import { api } from "../../convex/_generated/api";
+import { menuCategories as fallbackMenu } from "@/content/menu";
 
 type MenuListProps = {
   animate?: boolean;
 };
 
-export function MenuList({ animate = false }: MenuListProps) {
+type DisplayCategory = {
+  id: string;
+  name: string;
+  intro: string;
+  items: Array<{
+    name: string;
+    description: string;
+    price: string;
+    tags?: string[];
+    popular?: boolean;
+  }>;
+};
+
+function renderCategories(categories: DisplayCategory[], animate: boolean) {
   return (
     <div className="space-y-12 sm:space-y-16 md:space-y-20">
-      {menuCategories.map((category, index) => (
+      {categories.map((category, index) => (
         <section
           key={category.id}
           id={category.id}
@@ -28,7 +45,7 @@ export function MenuList({ animate = false }: MenuListProps) {
 
           <ul className="divide-y divide-border border-y border-border">
             {category.items.map((item) => (
-              <li key={item.name} className="py-4 sm:py-5">
+              <li key={`${category.id}-${item.name}`} className="py-4 sm:py-5">
                 <div className="flex items-start justify-between gap-3 sm:gap-6">
                   <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-center gap-2">
@@ -68,4 +85,51 @@ export function MenuList({ animate = false }: MenuListProps) {
       ))}
     </div>
   );
+}
+
+function fallbackCategories(): DisplayCategory[] {
+  return fallbackMenu.map((category) => ({
+    id: category.id,
+    name: category.name,
+    intro: category.intro,
+    items: category.items,
+  }));
+}
+
+function LiveMenuList({ animate }: { animate: boolean }) {
+  const liveMenu = useQuery(api.menu.listMenu);
+
+  if (liveMenu === undefined) {
+    return (
+      <div className="space-y-4 py-8">
+        <p className="text-sm text-[#6c5848]">Loading menu…</p>
+      </div>
+    );
+  }
+
+  const categories: DisplayCategory[] =
+    liveMenu.length > 0
+      ? liveMenu.map((category) => ({
+          id: category.slug,
+          name: category.name,
+          intro: category.intro,
+          items: category.items.map((item) => ({
+            name: item.name,
+            description: item.description,
+            price: item.price,
+            tags: item.tags,
+            popular: item.popular,
+          })),
+        }))
+      : fallbackCategories();
+
+  return renderCategories(categories, animate);
+}
+
+export function MenuList({ animate = false }: MenuListProps) {
+  if (!process.env.NEXT_PUBLIC_CONVEX_URL) {
+    return renderCategories(fallbackCategories(), animate);
+  }
+
+  return <LiveMenuList animate={animate} />;
 }

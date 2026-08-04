@@ -1,82 +1,83 @@
 # Crazy Cafe
 
-Daytime marketing site for **Crazy Cafe** — a neon-energy cafe open 7am to 2pm, built with Next.js.
-
-Bold mornings. Loud coffee.
+Daytime marketing site for **Crazy Cafe** — specialty coffee open 7am to 2pm, built with Next.js and Convex.
 
 ## Features
 
-- Home page with full-bleed hero, vibe section, and hours/location
-- About page with cafe story
-- Categorized menu (coffee, bites, sweets, cold drinks)
-- Contact page with mailto form, hours, and map link
-- Static content modules — edit copy without touching page components
-- Responsive layout with mobile nav
-- Neon diner visual identity (ink / charcoal / electric lime)
+- Marketing pages: home, about, menu, contact
+- Live menu powered by Convex
+- Client-friendly menu admin at `/admin` (shared password)
+- Responsive layout
 
 ## Stack
 
-- [Next.js](https://nextjs.org) 16 (App Router)
-- React 19
-- TypeScript
+- Next.js 16 (App Router)
+- React 19 + TypeScript
 - Tailwind CSS 4
-- `next/font` (Bebas Neue + DM Sans)
-
-No backend or database for v1 — everything is static.
+- [Convex](https://convex.dev) (menu database + admin mutations)
 
 ## Getting started
 
 ```bash
 npm install
+```
+
+### 1. Start Convex (terminal 1)
+
+```bash
+npx convex dev
+```
+
+This writes `NEXT_PUBLIC_CONVEX_URL` to `.env.local`.
+
+### 2. Set the admin password (once)
+
+```bash
+npx convex env set ADMIN_PASSWORD 'your-secure-password'
+```
+
+### 3. Start the site (terminal 2)
+
+```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open:
 
-### Scripts
+- Site: [http://localhost:3000](http://localhost:3000)
+- Menu admin: [http://localhost:3000/admin](http://localhost:3000/admin)
 
-| Command         | Description              |
-| --------------- | ------------------------ |
-| `npm run dev`   | Start local dev server   |
-| `npm run build` | Production build         |
-| `npm run start` | Serve production build   |
-| `npm run lint`  | Run ESLint               |
+On first successful admin login, the starter menu is seeded automatically if the database is empty.
+
+## Client menu editing
+
+1. Go to `/admin`
+2. Enter the shared admin password
+3. Add / edit / delete categories and items
+4. Changes show on `/menu` immediately
+
+Do not put `/admin` in the public navigation — share the URL and password with the cafe owner only.
 
 ## Project structure
 
 ```
 src/
-  app/           # Routes: /, /about, /menu, /contact
-  components/    # Header, footer, menu, hours, contact form
-  content/       # Editable site copy, hours, and menu data
+  app/(site)/     # Public pages
+  app/admin/      # Password-protected menu editor
+  components/     # UI + admin panel
+  content/        # Static site copy + fallback menu
+convex/
+  schema.ts       # menuCategories + menuItems
+  menu.ts         # Public query + admin mutations
+  seed.ts         # Starter menu seed
 ```
 
-### Edit cafe content
+## Deploy notes
 
-| File | What it controls |
-| ---- | ---------------- |
-| [`src/content/site.ts`](src/content/site.ts) | Name, tagline, address, phone, about copy |
-| [`src/content/hours.ts`](src/content/hours.ts) | Opening hours |
-| [`src/content/menu.ts`](src/content/menu.ts) | Menu categories and items |
-
-## Pages
-
-| Route | Purpose |
-| ----- | ------- |
-| `/` | Hero, vibe, hours & location |
-| `/about` | Cafe story |
-| `/menu` | Full menu by category |
-| `/contact` | Enquiry form + hours + map |
-
-## Deploy
-
-Deploy on [Vercel](https://vercel.com/new):
-
-```bash
-npx vercel
-```
-
-Or connect the [GitHub repo](https://github.com/DiwanMalla/crazy-cafe) in the Vercel dashboard for automatic previews and production deploys.
+1. Create a Convex project (`npx convex login` then `npx convex dev`)
+2. Set `ADMIN_PASSWORD` on the Convex deployment
+3. Set `NEXT_PUBLIC_CONVEX_URL` on Vercel (or your host)
+4. Deploy the Next.js app
 
 ## License
 
