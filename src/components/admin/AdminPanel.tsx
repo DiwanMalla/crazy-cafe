@@ -2,13 +2,15 @@
 
 import { useMutation, useQuery } from "convex/react";
 import Link from "next/link";
-import { useState, type FormEvent } from "react";
+import { useState, useSyncExternalStore, type FormEvent } from "react";
 import { api } from "../../../convex/_generated/api";
 import type { Id } from "../../../convex/_generated/dataModel";
 import {
   clearAdminPassword,
   getAdminPassword,
+  getServerAdminPassword,
   setAdminPassword,
+  subscribeAdminPassword,
 } from "@/lib/adminSession";
 import { site } from "@/content/site";
 
@@ -100,8 +102,10 @@ function ItemFields({
 }
 
 function ConnectedAdminPanel() {
-  const [password, setPassword] = useState<string | null>(() =>
-    getAdminPassword(),
+  const password = useSyncExternalStore(
+    subscribeAdminPassword,
+    getAdminPassword,
+    getServerAdminPassword,
   );
   const [loginPassword, setLoginPassword] = useState("");
   const [loginError, setLoginError] = useState<string | null>(null);
@@ -136,7 +140,6 @@ function ConnectedAdminPanel() {
     try {
       await verifyPassword({ password: loginPassword });
       setAdminPassword(loginPassword);
-      setPassword(loginPassword);
       setLoginPassword("");
       const result = await seedMenu({ password: loginPassword });
       if (result.seeded) {
@@ -155,7 +158,6 @@ function ConnectedAdminPanel() {
 
   function logout() {
     clearAdminPassword();
-    setPassword(null);
     setNotice(null);
   }
 
