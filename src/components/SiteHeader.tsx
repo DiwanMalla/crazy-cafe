@@ -41,8 +41,8 @@ export function SiteHeader() {
         <div
           className={`rounded-full border px-3 py-2.5 transition-all duration-500 sm:px-4 sm:py-3 md:px-6 ${
             scrolled
-              ? "border-[rgba(242,224,194,0.24)] bg-[rgba(33,22,14,0.92)] shadow-2xl shadow-black/35 backdrop-blur-xl"
-              : "border-[rgba(242,224,194,0.18)] bg-[rgba(28,19,13,0.55)] backdrop-blur-md"
+              ? "border-[rgba(220,230,212,0.28)] bg-[rgba(58,69,54,0.94)] shadow-2xl shadow-black/25 backdrop-blur-xl"
+              : "border-[rgba(220,230,212,0.2)] bg-[rgba(58,69,54,0.58)] backdrop-blur-md"
           }`}
         >
           <div className="flex items-center justify-between gap-3">
@@ -51,7 +51,7 @@ export function SiteHeader() {
               onClick={closeMenu}
               className="group flex min-w-0 flex-1 flex-col leading-none"
             >
-              <span className="heading-display truncate text-[1.35rem] text-parchment transition-colors group-hover:text-honey sm:text-2xl md:text-3xl">
+              <span className="brand-mark truncate text-[1.15rem] text-parchment transition-colors group-hover:text-honey sm:text-xl md:text-2xl">
                 {site.name}
               </span>
               <span className="section-label mt-1 hidden text-[0.58rem] text-latte/90 sm:block">
@@ -93,7 +93,7 @@ export function SiteHeader() {
 
             <button
               type="button"
-              className="relative z-50 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[rgba(242,224,194,0.2)] bg-[rgba(33,22,14,0.7)] md:hidden"
+              className="relative z-50 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[rgba(220,230,212,0.22)] bg-[rgba(58,69,54,0.72)] md:hidden"
               aria-expanded={open}
               aria-controls="mobile-nav"
               aria-label={open ? "Close menu" : "Open menu"}
@@ -120,7 +120,7 @@ export function SiteHeader() {
       </div>
 
       <div
-        className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 md:hidden ${
+        className={`fixed inset-0 z-40 bg-black/45 transition-opacity duration-300 md:hidden ${
           open ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
         onClick={closeMenu}
@@ -129,16 +129,16 @@ export function SiteHeader() {
 
       <aside
         id="mobile-nav"
-        className={`fixed inset-y-0 right-0 z-50 flex h-full w-[min(88vw,20rem)] flex-col border-l border-[rgba(242,224,194,0.2)] bg-[linear-gradient(180deg,#2b1b11_0%,#1f140d_100%)] text-parchment shadow-2xl transition-transform duration-300 ease-out md:hidden ${
+        className={`fixed inset-y-0 right-0 z-50 flex h-full w-[min(88vw,20rem)] flex-col border-l border-[rgba(220,230,212,0.2)] bg-[linear-gradient(180deg,#4a5646_0%,#3a4536_100%)] text-parchment shadow-2xl transition-transform duration-300 ease-out md:hidden ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex items-center justify-between border-b border-[rgba(242,224,194,0.12)] px-5 pb-4 pt-[max(1.25rem,env(safe-area-inset-top))]">
+        <div className="flex items-center justify-between border-b border-[rgba(220,230,212,0.12)] px-5 pb-4 pt-[max(1.25rem,env(safe-area-inset-top))]">
           <p className="section-label text-latte">Menu</p>
           <button
             type="button"
             onClick={closeMenu}
-            className="rounded-full border border-[rgba(242,224,194,0.2)] px-3 py-1.5 text-xs uppercase tracking-[0.14em] text-cream"
+            className="rounded-full border border-[rgba(220,230,212,0.2)] px-3 py-1.5 text-xs uppercase tracking-[0.14em] text-cream"
           >
             Close
           </button>
@@ -159,7 +159,7 @@ export function SiteHeader() {
                   open ? "animate-reveal" : ""
                 } ${
                   active
-                    ? "bg-[rgba(185,133,75,0.15)] text-honey"
+                    ? "bg-[rgba(138,155,126,0.22)] text-honey"
                     : "text-parchment/90 hover:text-honey"
                 }`}
                 style={{ animationDelay: `${i * 0.06}s` }}
@@ -170,7 +170,7 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="mt-auto space-y-3 border-t border-[rgba(242,224,194,0.12)] p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
+        <div className="mt-auto space-y-3 border-t border-[rgba(220,230,212,0.12)] p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
           <a href={site.phoneHref} className="block text-sm text-cream">
             {site.phone}
           </a>

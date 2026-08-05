@@ -23,7 +23,7 @@ const reviews = [
     initials: "PM",
     rating: 5,
     date: "3 weeks ago",
-    text: "Discovered Crazy Cafe last month and I'm already a regular. The vibe is exactly right — not pretentious, just genuinely good coffee and great people. The croissant is incredibly flaky.",
+    text: "Discovered Crazies Cafe last month and I'm already a regular. The vibe is exactly right — not pretentious, just genuinely good coffee and great people. The croissant is incredibly flaky.",
     service: "Pastries & Coffee",
   },
   {
@@ -43,7 +43,7 @@ function Stars({ rating }: { rating: number }) {
       {Array.from({ length: 5 }, (_, i) => (
         <svg
           key={i}
-          className={`h-3.5 w-3.5 ${i < rating ? "text-[#a8743f]" : "text-[#d8c2a9]"}`}
+          className={`h-3.5 w-3.5 ${i < rating ? "text-terracotta" : "text-[#d4d0c4]"}`}
           viewBox="0 0 20 20"
           fill="currentColor"
           aria-hidden
@@ -57,23 +57,23 @@ function Stars({ rating }: { rating: number }) {
 
 export function Reviews() {
   return (
-    <section className="border-t border-border bg-[linear-gradient(180deg,#f7efe3_0%,#f2e4d3_100%)]">
+    <section className="border-t border-border bg-[linear-gradient(180deg,#f7f3e9_0%,#efe9db_100%)]">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-5 sm:py-20 md:px-8 md:py-28">
         <div className="mb-8 text-center sm:mb-12">
           <p className="section-label">Testimonials</p>
           <h2 className="heading-display mt-3 text-[clamp(1.85rem,6vw,3rem)] text-foreground sm:mt-4">
             What Our Guests Say
           </h2>
-          <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-[#6a5341] sm:mt-4 md:text-base">
+          <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-[#5f655a] sm:mt-4 md:text-base">
             Honest reviews from the Surry Hills community who come back every
             morning.
           </p>
-          <div className="mt-5 inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-[rgba(185,133,75,0.4)] bg-[rgba(255,248,238,0.9)] px-4 py-2.5 shadow-[0_10px_24px_-18px_rgba(40,22,12,0.6)] sm:mt-7 sm:gap-3 sm:px-5">
+          <div className="mt-5 inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-[rgba(138,155,126,0.45)] bg-[rgba(255,252,246,0.95)] px-4 py-2.5 shadow-[0_10px_24px_-18px_rgba(30,34,28,0.45)] sm:mt-7 sm:gap-3 sm:px-5">
             <Stars rating={5} />
             <span className="text-sm font-semibold text-foreground">
               4.9 out of 5
             </span>
-            <span className="text-xs text-[#6a5341]">· 200+ reviews</span>
+            <span className="text-xs text-[#5f655a]">· 200+ reviews</span>
           </div>
         </div>
 
@@ -81,23 +81,23 @@ export function Reviews() {
           {reviews.slice(0, 3).map((review) => (
             <div
               key={review.id}
-              className="flex flex-col gap-4 rounded-2xl border border-[rgba(91,59,39,0.1)] bg-[linear-gradient(180deg,#fffaf3_0%,#f8eddd_100%)] p-5 sm:p-6"
+              className="flex flex-col gap-4 rounded-2xl border border-[rgba(58,69,54,0.1)] bg-[linear-gradient(180deg,#fffcf6_0%,#f3efe4_100%)] p-5 sm:p-6"
             >
               <Stars rating={review.rating} />
 
-              <blockquote className="flex-1 text-sm leading-relaxed text-[#4f3e31]">
+              <blockquote className="flex-1 text-sm leading-relaxed text-[#4a4f46]">
                 &ldquo;{review.text}&rdquo;
               </blockquote>
 
-              <div className="flex items-center gap-3 border-t border-[rgba(91,59,39,0.12)] pt-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[rgba(185,133,75,0.14)] text-xs font-bold text-[#8e6038]">
+              <div className="flex items-center gap-3 border-t border-[rgba(58,69,54,0.12)] pt-4">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[rgba(138,155,126,0.18)] text-xs font-bold text-[#5a6e54]">
                   {review.initials}
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-foreground">
                     {review.name}
                   </p>
-                  <p className="text-[11px] text-[#7b6350]">
+                  <p className="text-[11px] text-[#6a7064]">
                     {review.service} · {review.date}
                   </p>
                 </div>

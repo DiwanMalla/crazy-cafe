@@ -13,8 +13,8 @@ export default function AboutPage() {
     <div className="page-shell">
       <section className="relative min-h-[50svh] overflow-hidden sm:min-h-[58vh] md:min-h-[68vh]">
         <Image
-          src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=2000&q=80"
-          alt="Warm interior of Crazy Cafe in Surry Hills"
+          src="/cafe/dining-room.png"
+          alt="Warm interior of Crazies Cafe in Surry Hills"
           fill
           priority
           className="object-cover object-center"
@@ -28,21 +28,21 @@ export default function AboutPage() {
               {site.about.headline}
             </h1>
             <p className="mt-3 max-w-lg text-sm leading-relaxed text-cream/90 sm:mt-4 sm:text-base">
-              We are a neighborhood specialty cafe with an Australian spirit:
-              honest flavors, warm people, and mornings done properly.
+              We are a neighbourhood specialty cafe with an Australian spirit:
+              honest flavours, warm people, and mornings done properly.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="border-t border-border bg-[linear-gradient(180deg,#f8efe3_0%,#f3e5d4_100%)]">
+      <section className="border-t border-border bg-[linear-gradient(180deg,#f7f3e9_0%,#efe9db_100%)]">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-5 sm:py-16 md:px-8 md:py-24">
           <div className="grid gap-10 lg:grid-cols-[3fr_2fr] lg:items-start lg:gap-20">
             <div className="space-y-5 sm:space-y-6">
               {site.about.paragraphs.map((para) => (
                 <p
                   key={para.slice(0, 20)}
-                  className="text-base leading-relaxed text-[#5e4937] sm:text-lg md:text-xl"
+                  className="text-base leading-relaxed text-[#5a5f54] sm:text-lg md:text-xl"
                 >
                   {para}
                 </p>
@@ -59,7 +59,7 @@ export default function AboutPage() {
             </div>
 
             <aside className="card-light overflow-hidden rounded-2xl">
-              <div className="divide-y divide-[rgba(91,59,39,0.12)]">
+              <div className="divide-y divide-[rgba(58,69,54,0.12)]">
                 {[
                   {
                     label: "Open",
@@ -69,7 +69,7 @@ export default function AboutPage() {
                   {
                     label: "Location",
                     value: "Surry Hills, NSW",
-                    sub: "42 Neon Lane",
+                    sub: site.address.street,
                   },
                   {
                     label: "Walk-ins",
@@ -87,14 +87,14 @@ export default function AboutPage() {
                     <p className="mt-1 text-base font-semibold text-foreground sm:text-lg">
                       {item.value}
                     </p>
-                    <p className="text-sm text-[#6f5847]">{item.sub}</p>
+                    <p className="text-sm text-[#6a7064]">{item.sub}</p>
                   </div>
                 ))}
                 <div className="px-5 py-4 sm:px-6 sm:py-5 md:px-7">
                   <p className="section-label">Phone</p>
                   <a
                     href={site.phoneHref}
-                    className="mt-1 block text-base font-semibold text-foreground transition-colors hover:text-[#8d613a] sm:text-lg"
+                    className="mt-1 block text-base font-semibold text-foreground transition-colors hover:text-caramel sm:text-lg"
                   >
                     {site.phone}
                   </a>
@@ -110,7 +110,8 @@ export default function AboutPage() {
           <div className="mb-8 sm:mb-12">
             <p className="section-label">What We Offer</p>
             <h2 className="heading-display mt-3 text-[clamp(1.85rem,6vw,3rem)] text-foreground">
-              What makes us <em className="text-caramel not-italic">Crazy</em>
+              What makes us{" "}
+              <em className="text-caramel not-italic">Crazies</em>
             </h2>
           </div>
 
@@ -124,7 +125,7 @@ export default function AboutPage() {
                 <h3 className="heading-display mt-3 text-xl text-foreground sm:text-2xl">
                   {feature.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#64503f]">
+                <p className="mt-3 text-sm leading-relaxed text-[#5f655a]">
                   {feature.description}
                 </p>
               </div>
@@ -135,13 +136,13 @@ export default function AboutPage() {
 
       <section className="relative h-56 overflow-hidden sm:h-72 md:h-96">
         <Image
-          src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=2000&q=80"
-          alt="Barista brewing espresso"
+          src="/cafe/window-bar.png"
+          alt="Window bar seating at Crazies Cafe"
           fill
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-espresso/90 via-espresso/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-espresso/90 via-espresso/55 to-transparent" />
         <div className="relative mx-auto flex h-full max-w-7xl items-center px-4 sm:px-5 md:px-8">
           <div className="max-w-lg">
             <p className="heading-display text-xl leading-snug text-parchment sm:text-2xl md:text-3xl">

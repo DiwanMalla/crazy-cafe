@@ -10,6 +10,7 @@
 
 import type * as lib_admin from "../lib/admin.js";
 import type * as menu from "../menu.js";
+import type * as menuData from "../menuData.js";
 import type * as seed from "../seed.js";
 
 import type {
@@ -21,6 +22,7 @@ import type {
 declare const fullApi: ApiFromModules<{
   "lib/admin": typeof lib_admin;
   menu: typeof menu;
+  menuData: typeof menuData;
   seed: typeof seed;
 }>;
 

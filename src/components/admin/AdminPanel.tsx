@@ -46,26 +46,26 @@ function ItemFields({
 }) {
   return (
     <div className="grid gap-3 sm:grid-cols-2">
-      <label className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#7b6350]">
+      <label className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#6a7064]">
         Name
         <input
           required
           value={value.name}
           onChange={(event) => onChange({ ...value, name: event.target.value })}
-          className="mt-2 w-full min-h-11 rounded-xl border border-[rgba(91,59,39,0.2)] bg-white/80 px-4 py-3 text-sm"
+          className="mt-2 w-full min-h-11 rounded-xl border border-[rgba(58,69,54,0.2)] bg-white/80 px-4 py-3 text-sm"
         />
       </label>
-      <label className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#7b6350]">
+      <label className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#6a7064]">
         Price
         <input
           required
           value={value.price}
           onChange={(event) => onChange({ ...value, price: event.target.value })}
-          className="mt-2 w-full min-h-11 rounded-xl border border-[rgba(91,59,39,0.2)] bg-white/80 px-4 py-3 text-sm"
+          className="mt-2 w-full min-h-11 rounded-xl border border-[rgba(58,69,54,0.2)] bg-white/80 px-4 py-3 text-sm"
           placeholder="$5.00"
         />
       </label>
-      <label className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#7b6350] sm:col-span-2">
+      <label className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#6a7064] sm:col-span-2">
         Description
         <textarea
           required
@@ -74,19 +74,19 @@ function ItemFields({
           onChange={(event) =>
             onChange({ ...value, description: event.target.value })
           }
-          className="mt-2 w-full rounded-xl border border-[rgba(91,59,39,0.2)] bg-white/80 px-4 py-3 text-sm"
+          className="mt-2 w-full rounded-xl border border-[rgba(58,69,54,0.2)] bg-white/80 px-4 py-3 text-sm"
         />
       </label>
-      <label className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#7b6350]">
+      <label className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#6a7064]">
         Tags (comma separated)
         <input
           value={value.tags}
           onChange={(event) => onChange({ ...value, tags: event.target.value })}
-          className="mt-2 w-full min-h-11 rounded-xl border border-[rgba(91,59,39,0.2)] bg-white/80 px-4 py-3 text-sm"
+          className="mt-2 w-full min-h-11 rounded-xl border border-[rgba(58,69,54,0.2)] bg-white/80 px-4 py-3 text-sm"
           placeholder="Vegan, Gluten-Free"
         />
       </label>
-      <label className="flex items-end gap-2 pb-3 text-sm text-[#5b4635]">
+      <label className="flex items-end gap-2 pb-3 text-sm text-[#5a5f54]">
         <input
           type="checkbox"
           checked={value.popular}
@@ -126,6 +126,7 @@ function ConnectedAdminPanel() {
   const menu = useQuery(api.menu.listMenu, password ? {} : "skip");
   const verifyPassword = useMutation(api.menu.verifyPassword);
   const seedMenu = useMutation(api.seed.seedMenu);
+  const replaceMenuFromSeed = useMutation(api.seed.replaceMenuFromSeed);
   const createCategory = useMutation(api.menu.createCategory);
   const updateCategory = useMutation(api.menu.updateCategory);
   const deleteCategory = useMutation(api.menu.deleteCategory);
@@ -178,25 +179,25 @@ function ConnectedAdminPanel() {
   if (!password) {
     return (
       <div className="mx-auto flex min-h-full max-w-md flex-col justify-center px-4 py-16">
-        <p className="section-label">Crazy Cafe</p>
+        <p className="section-label">Crazies Cafe</p>
         <h1 className="heading-display mt-3 text-4xl text-foreground">
           Menu Admin
         </h1>
-        <p className="mt-3 text-sm text-[#5b4635]">
+        <p className="mt-3 text-sm text-[#5a5f54]">
           Enter the shared admin password to add or edit menu items.
         </p>
         <form
           onSubmit={handleLogin}
           className="card-light mt-8 space-y-4 rounded-2xl p-6"
         >
-          <label className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#7b6350]">
+          <label className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#6a7064]">
             Password
             <input
               type="password"
               required
               value={loginPassword}
               onChange={(event) => setLoginPassword(event.target.value)}
-              className="mt-2 w-full min-h-11 rounded-xl border border-[rgba(91,59,39,0.2)] bg-white/80 px-4 py-3 text-base"
+              className="mt-2 w-full min-h-11 rounded-xl border border-[rgba(58,69,54,0.2)] bg-white/80 px-4 py-3 text-base"
               placeholder="Admin password"
               autoComplete="current-password"
             />
@@ -210,7 +211,7 @@ function ConnectedAdminPanel() {
         </form>
         <Link
           href="/"
-          className="mt-6 text-center text-sm text-[#7b6350] hover:text-[#8f623a]"
+          className="mt-6 text-center text-sm text-[#6a7064] hover:text-[#5a6e54]"
         >
           ← Back to {site.name}
         </Link>
@@ -222,11 +223,11 @@ function ConnectedAdminPanel() {
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-5 sm:py-12">
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <p className="section-label">Crazy Cafe</p>
+          <p className="section-label">Crazies Cafe</p>
           <h1 className="heading-display mt-2 text-4xl text-foreground">
             Menu Admin
           </h1>
-          <p className="mt-2 text-sm text-[#5b4635]">
+          <p className="mt-2 text-sm text-[#5a5f54]">
             Changes appear on the public menu instantly.
           </p>
         </div>
@@ -234,6 +235,29 @@ function ConnectedAdminPanel() {
           <Link href="/menu" className="btn-outline-dark">
             View public menu
           </Link>
+          <button
+            type="button"
+            className="btn-outline-dark"
+            disabled={busy}
+            onClick={() => {
+              if (
+                !window.confirm(
+                  "Replace the entire live menu with the printed Crazies Cafe menu? This cannot be undone.",
+                )
+              ) {
+                return;
+              }
+              void runAdmin(async () => {
+                if (!password) return;
+                const result = await replaceMenuFromSeed({ password });
+                setNotice(
+                  `Menu replaced — ${result.categories} categories, ${result.items} items.`,
+                );
+              }, "Menu replaced from printed menu.");
+            }}
+          >
+            Load printed menu
+          </button>
           <button type="button" onClick={logout} className="btn-dark">
             Sign out
           </button>
@@ -241,7 +265,7 @@ function ConnectedAdminPanel() {
       </div>
 
       {notice ? (
-        <p className="mt-6 rounded-xl border border-[rgba(185,133,75,0.35)] bg-[rgba(255,248,238,0.95)] px-4 py-3 text-sm text-[#5b4635]">
+        <p className="mt-6 rounded-xl border border-[rgba(138,155,126,0.35)] bg-[rgba(255,248,238,0.95)] px-4 py-3 text-sm text-[#5a5f54]">
           {notice}
         </p>
       ) : null}
@@ -275,23 +299,23 @@ function ConnectedAdminPanel() {
             }, editingCategoryId ? "Category updated." : "Category added.");
           }}
         >
-          <label className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#7b6350]">
+          <label className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#6a7064]">
             Name
             <input
               required
               value={categoryName}
               onChange={(event) => setCategoryName(event.target.value)}
-              className="mt-2 w-full min-h-11 rounded-xl border border-[rgba(91,59,39,0.2)] bg-white/80 px-4 py-3 text-sm"
+              className="mt-2 w-full min-h-11 rounded-xl border border-[rgba(58,69,54,0.2)] bg-white/80 px-4 py-3 text-sm"
               placeholder="Coffee & Drinks"
             />
           </label>
-          <label className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#7b6350]">
+          <label className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#6a7064]">
             Intro
             <input
               required
               value={categoryIntro}
               onChange={(event) => setCategoryIntro(event.target.value)}
-              className="mt-2 w-full min-h-11 rounded-xl border border-[rgba(91,59,39,0.2)] bg-white/80 px-4 py-3 text-sm"
+              className="mt-2 w-full min-h-11 rounded-xl border border-[rgba(58,69,54,0.2)] bg-white/80 px-4 py-3 text-sm"
               placeholder="Short description for this section"
             />
           </label>
@@ -317,9 +341,9 @@ function ConnectedAdminPanel() {
       </section>
 
       {menu === undefined ? (
-        <p className="mt-10 text-sm text-[#5b4635]">Loading menu…</p>
+        <p className="mt-10 text-sm text-[#5a5f54]">Loading menu…</p>
       ) : menu.length === 0 ? (
-        <p className="mt-10 text-sm text-[#5b4635]">
+        <p className="mt-10 text-sm text-[#5a5f54]">
           No categories yet. Add one above, or sign out and back in to load the
           starter menu.
         </p>
@@ -337,14 +361,14 @@ function ConnectedAdminPanel() {
                     <h2 className="heading-display text-2xl text-foreground">
                       {category.name}
                     </h2>
-                    <p className="mt-1 text-sm text-[#5b4635]">
+                    <p className="mt-1 text-sm text-[#5a5f54]">
                       {category.intro}
                     </p>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     <button
                       type="button"
-                      className="rounded-full border border-[rgba(91,59,39,0.25)] px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-[#5b4635]"
+                      className="rounded-full border border-[rgba(58,69,54,0.25)] px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-[#5a5f54]"
                       onClick={() => {
                         setEditingCategoryId(category._id);
                         setCategoryName(category.name);
@@ -379,7 +403,7 @@ function ConnectedAdminPanel() {
                   </div>
                 </div>
 
-                <ul className="mt-6 divide-y divide-[rgba(91,59,39,0.12)] border-y border-[rgba(91,59,39,0.12)]">
+                <ul className="mt-6 divide-y divide-[rgba(58,69,54,0.12)] border-y border-[rgba(58,69,54,0.12)]">
                   {category.items.map((item) => (
                     <li key={item._id} className="py-4">
                       {editingItemId === item._id ? (
@@ -434,7 +458,7 @@ function ConnectedAdminPanel() {
                                 {item.name}
                               </p>
                               {item.popular ? (
-                                <span className="rounded-full bg-[rgba(185,133,75,0.14)] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#8f623a]">
+                                <span className="rounded-full bg-[rgba(138,155,126,0.14)] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#5a6e54]">
                                   Popular
                                 </span>
                               ) : null}
@@ -443,18 +467,18 @@ function ConnectedAdminPanel() {
                               {item.description}
                             </p>
                             {item.tags.length > 0 ? (
-                              <p className="mt-1 text-xs text-[#7b6350]">
+                              <p className="mt-1 text-xs text-[#6a7064]">
                                 {item.tags.join(" · ")}
                               </p>
                             ) : null}
                           </div>
                           <div className="flex items-center gap-3">
-                            <p className="font-display text-lg text-[#8f623a]">
+                            <p className="font-display text-lg text-[#5a6e54]">
                               {item.price}
                             </p>
                             <button
                               type="button"
-                              className="text-xs font-semibold uppercase tracking-[0.12em] text-[#8f623a]"
+                              className="text-xs font-semibold uppercase tracking-[0.12em] text-[#5a6e54]"
                               onClick={() => {
                                 setEditingItemId(item._id);
                                 setEditItemForm({
@@ -494,7 +518,7 @@ function ConnectedAdminPanel() {
                 </ul>
 
                 <form
-                  className="mt-6 grid gap-3 border-t border-[rgba(91,59,39,0.12)] pt-6"
+                  className="mt-6 grid gap-3 border-t border-[rgba(58,69,54,0.12)] pt-6"
                   onSubmit={(event) => {
                     event.preventDefault();
                     void runAdmin(async () => {
@@ -514,7 +538,7 @@ function ConnectedAdminPanel() {
                     }, "Item added.");
                   }}
                 >
-                  <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-[#7b6350]">
+                  <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-[#6a7064]">
                     Add item to {category.name}
                   </h3>
                   <ItemFields
@@ -550,7 +574,7 @@ export function AdminPanel() {
         <h1 className="heading-display text-3xl text-foreground">
           Convex not connected
         </h1>
-        <p className="mt-4 text-sm leading-relaxed text-[#5b4635]">
+        <p className="mt-4 text-sm leading-relaxed text-[#5a5f54]">
           Run{" "}
           <code className="rounded bg-white/70 px-1.5 py-0.5">
             npx convex dev

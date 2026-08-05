@@ -18,7 +18,7 @@ export function ContactForm() {
   }
 
   const inputClass =
-    "mt-2 w-full min-h-11 rounded-xl border border-[rgba(91,59,39,0.2)] bg-white/80 px-4 py-3 text-base text-foreground placeholder:text-[#9a806a] focus:border-[rgba(185,133,75,0.7)] focus:outline-none transition-colors sm:text-sm";
+    "mt-2 w-full min-h-11 rounded-xl border border-[rgba(58,69,54,0.2)] bg-white/80 px-4 py-3 text-base text-foreground placeholder:text-[#9a9588] focus:border-[rgba(138,155,126,0.75)] focus:outline-none transition-colors sm:text-sm";
 
   return (
     <form
@@ -28,7 +28,7 @@ export function ContactForm() {
       <div>
         <label
           htmlFor="name"
-          className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#7b6350]"
+          className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#6a7064]"
         >
           Your Name
         </label>
@@ -46,7 +46,7 @@ export function ContactForm() {
       <div>
         <label
           htmlFor="email"
-          className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#7b6350]"
+          className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#6a7064]"
         >
           Email Address
         </label>
@@ -65,7 +65,7 @@ export function ContactForm() {
       <div>
         <label
           htmlFor="message"
-          className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#7b6350]"
+          className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#6a7064]"
         >
           Message
         </label>

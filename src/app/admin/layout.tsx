@@ -14,7 +14,7 @@ export default function AdminLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="min-h-full bg-[linear-gradient(180deg,#f7efe3_0%,#f2e4d3_100%)]">
+    <div className="min-h-full bg-[linear-gradient(180deg,#f7f3e9_0%,#efe9db_100%)]">
       {children}
     </div>
   );

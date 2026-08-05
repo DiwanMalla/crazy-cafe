@@ -38,7 +38,7 @@ function renderCategories(categories: DisplayCategory[], animate: boolean) {
             <h2 className="heading-display mt-2 text-[clamp(1.75rem,5vw,3rem)] text-foreground">
               {category.name}
             </h2>
-            <p className="mt-2 text-sm leading-relaxed text-[#6c5848]">
+            <p className="mt-2 text-sm leading-relaxed text-[#5f655a]">
               {category.intro}
             </p>
           </div>
@@ -53,12 +53,12 @@ function renderCategories(categories: DisplayCategory[], animate: boolean) {
                         {item.name}
                       </h3>
                       {item.popular ? (
-                        <span className="rounded-full border border-[rgba(185,133,75,0.42)] bg-[rgba(185,133,75,0.14)] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#8f623a]">
+                        <span className="rounded-full border border-[rgba(138,155,126,0.45)] bg-[rgba(138,155,126,0.14)] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#5a6e54]">
                           Popular
                         </span>
                       ) : null}
                     </div>
-                    <p className="mt-1.5 text-sm leading-relaxed text-[#5f4a39]">
+                    <p className="mt-1.5 text-sm leading-relaxed text-[#5a5f54]">
                       {item.description}
                     </p>
                     {item.tags && item.tags.length > 0 ? (
@@ -66,7 +66,7 @@ function renderCategories(categories: DisplayCategory[], animate: boolean) {
                         {item.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="rounded-full border border-[rgba(91,59,39,0.18)] bg-[rgba(91,59,39,0.06)] px-2.5 py-0.5 text-[10px] font-semibold text-[#6c5848]"
+                            className="rounded-full border border-[rgba(58,69,54,0.16)] bg-[rgba(58,69,54,0.05)] px-2.5 py-0.5 text-[10px] font-semibold text-[#5f655a]"
                           >
                             {tag}
                           </span>
@@ -74,7 +74,7 @@ function renderCategories(categories: DisplayCategory[], animate: boolean) {
                       </div>
                     ) : null}
                   </div>
-                  <p className="shrink-0 font-display text-lg font-semibold text-[#8f623a] sm:text-xl">
+                  <p className="shrink-0 font-display text-lg font-semibold text-caramel sm:text-xl">
                     {item.price}
                   </p>
                 </div>

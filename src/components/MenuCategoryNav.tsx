@@ -18,7 +18,7 @@ function CategoryPills({
         <a
           key={category.id}
           href={`#${category.id}`}
-          className="shrink-0 rounded-full border border-[rgba(242,224,194,0.35)] bg-[rgba(255,255,255,0.04)] px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-honey transition-colors hover:border-honey hover:bg-[rgba(248,224,194,0.1)]"
+          className="shrink-0 rounded-full border border-[rgba(220,230,212,0.35)] bg-[rgba(255,255,255,0.04)] px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-honey transition-colors hover:border-honey hover:bg-[rgba(220,230,212,0.12)]"
         >
           {category.name}
         </a>

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function MenuPage() {
   return (
     <div className="page-shell">
-      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#2b1b11_0%,#21140d_100%)]">
+      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#44503f_0%,#3a4536_100%)]">
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-12 sm:px-5 sm:py-16 md:px-8 md:py-24">
           <div className="max-w-2xl">
             <p className="animate-fade-in section-label text-honey">Our Menu</p>
@@ -33,17 +33,17 @@ export default function MenuPage() {
 
         <div className="absolute inset-y-0 right-0 hidden w-2/5 lg:block">
           <Image
-            src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=80"
-            alt="Barista at work at Crazy Cafe"
+            src="/cafe/counter.png"
+            alt="Coffee bar at Crazies Cafe"
             fill
             className="object-cover object-center"
             sizes="40vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#2b1b11] via-[#2b1b11]/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#44503f] via-[#44503f]/60 to-transparent" />
         </div>
       </section>
 
-      <div className="border-b border-t border-border bg-[rgba(42,27,17,0.96)]">
+      <div className="border-b border-t border-border bg-[rgba(58,69,54,0.96)]">
         <div className="mx-auto max-w-7xl px-4 py-3 sm:px-5 md:px-8">
           <p className="text-center text-[11px] leading-relaxed text-cream/75 sm:text-xs">
             Dietary needs welcome — please ask our team.{" "}
@@ -56,9 +56,9 @@ export default function MenuPage() {
         <MenuList animate />
       </section>
 
-      <section className="border-t border-border bg-[linear-gradient(180deg,#2b1b11_0%,#1f140d_100%)]">
+      <section className="border-t border-border bg-[linear-gradient(180deg,#44503f_0%,#3a4536_100%)]">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 sm:py-12 md:px-8 md:py-16">
-          <div className="flex flex-col items-stretch gap-5 rounded-2xl border border-[rgba(242,224,194,0.2)] bg-[rgba(255,255,255,0.03)] p-5 text-center sm:items-center sm:p-6 sm:text-left md:flex-row md:justify-between md:p-8">
+          <div className="flex flex-col items-stretch gap-5 rounded-2xl border border-[rgba(220,230,212,0.2)] bg-[rgba(255,255,255,0.04)] p-5 text-center sm:items-center sm:p-6 sm:text-left md:flex-row md:justify-between md:p-8">
             <div>
               <h2 className="heading-display text-xl text-parchment sm:text-2xl md:text-3xl">
                 Come and taste for yourself.

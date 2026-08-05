@@ -11,10 +11,10 @@ const links = [
 
 export function SiteFooter() {
   return (
-    <footer className="mt-auto border-t border-[rgba(230,200,154,0.2)] bg-[linear-gradient(180deg,#25180f_0%,#1a110b_100%)] pb-[env(safe-area-inset-bottom)] text-cream">
+    <footer className="mt-auto border-t border-[rgba(220,230,212,0.2)] bg-[linear-gradient(180deg,#44503f_0%,#3a4536_100%)] pb-[env(safe-area-inset-bottom)] text-cream">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:gap-10 sm:px-5 sm:py-14 md:grid-cols-3 md:px-8 md:py-16">
         <div>
-          <p className="heading-display text-2xl text-parchment sm:text-3xl">
+          <p className="brand-mark text-xl text-parchment sm:text-2xl">
             {site.name}
           </p>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-stone">
@@ -25,7 +25,7 @@ export function SiteFooter() {
               href={site.social.instagram}
               target="_blank"
               rel="noreferrer"
-              className="rounded-full border border-[rgba(230,200,154,0.3)] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.17em] text-stone transition-colors hover:border-honey hover:text-honey"
+              className="rounded-full border border-[rgba(220,230,212,0.3)] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.17em] text-stone transition-colors hover:border-honey hover:text-honey"
             >
               Instagram
             </a>
@@ -33,7 +33,7 @@ export function SiteFooter() {
               href={site.social.tiktok}
               target="_blank"
               rel="noreferrer"
-              className="rounded-full border border-[rgba(230,200,154,0.3)] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.17em] text-stone transition-colors hover:border-honey hover:text-honey"
+              className="rounded-full border border-[rgba(220,230,212,0.3)] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.17em] text-stone transition-colors hover:border-honey hover:text-honey"
             >
               TikTok
             </a>
@@ -87,7 +87,7 @@ export function SiteFooter() {
         </div>
       </div>
 
-      <div className="border-t border-[rgba(230,200,154,0.16)]">
+      <div className="border-t border-[rgba(220,230,212,0.16)]">
         <p className="mx-auto max-w-7xl px-4 py-4 text-xs text-stone sm:px-5 sm:py-5 md:px-8">
           © {new Date().getFullYear()} {site.name}. All rights reserved.
         </p>

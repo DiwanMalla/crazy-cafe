@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="page-shell">
-      <section className="border-b border-border bg-[linear-gradient(180deg,#2b1b11_0%,#21140d_100%)]">
+      <section className="border-b border-border bg-[linear-gradient(180deg,#44503f_0%,#3a4536_100%)]">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-5 sm:py-16 md:px-8 md:py-24">
           <p className="animate-fade-in section-label text-honey">
             Contact &amp; Location
@@ -46,7 +46,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="border-t border-border bg-[linear-gradient(180deg,#f6ecdf_0%,#f2e2d1_100%)]">
+      <section className="border-t border-border bg-[linear-gradient(180deg,#f7f3e9_0%,#efe9db_100%)]">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-5 sm:py-16 md:px-8 md:py-24">
           <p className="section-label">Common Questions</p>
           <h2 className="heading-display mb-8 mt-3 text-[clamp(1.85rem,6vw,3rem)] text-foreground sm:mb-10">
@@ -56,10 +56,10 @@ export default function ContactPage() {
           <div className="grid gap-4 sm:gap-5 md:grid-cols-2">
             {site.faqs.map((faq) => (
               <div key={faq.q} className="card-light rounded-2xl p-5 sm:p-6">
-                <h3 className="text-sm font-semibold text-[#8f623a] sm:text-base">
+                <h3 className="text-sm font-semibold text-caramel sm:text-base">
                   {faq.q}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#5f4a39]">
+                <p className="mt-2 text-sm leading-relaxed text-[#5a5f54]">
                   {faq.a}
                 </p>
               </div>

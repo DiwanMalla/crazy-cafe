@@ -34,7 +34,7 @@ export function HoursBlock({ showMapLink = true }: HoursBlockProps) {
 
         <div className="mt-5 space-y-4 sm:mt-6">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#7b6350]">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[#6a7064]">
               Address
             </p>
             <p className="mt-1 text-sm text-foreground sm:text-base">
@@ -42,23 +42,23 @@ export function HoursBlock({ showMapLink = true }: HoursBlockProps) {
             </p>
           </div>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#7b6350]">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[#6a7064]">
               Phone
             </p>
             <a
               href={site.phoneHref}
-              className="mt-1 block text-sm text-foreground transition-colors hover:text-[#8f623a] sm:text-base"
+              className="mt-1 block text-sm text-foreground transition-colors hover:text-caramel sm:text-base"
             >
               {site.phone}
             </a>
           </div>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#7b6350]">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[#6a7064]">
               Email
             </p>
             <a
               href={`mailto:${site.email}`}
-              className="mt-1 block break-all text-sm text-[#5d4738] transition-colors hover:text-[#8f623a] sm:text-base"
+              className="mt-1 block break-all text-sm text-[#5a5f54] transition-colors hover:text-caramel sm:text-base"
             >
               {site.email}
             </a>

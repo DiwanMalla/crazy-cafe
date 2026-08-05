@@ -1,31 +1,32 @@
 export const site = {
-  name: "Crazy Cafe",
-  tagline: "Specialty coffee and all-day brunch in Surry Hills — open daily until 2pm.",
-  headline: "Bold mornings. Loud coffee.",
+  name: "Crazies Cafe",
+  tagline:
+    "Specialty coffee, cold-pressed juices, and all-day brunch in a sage-green neighbourhood spot — open, warm, and walk-in friendly.",
+  headline: "Come for the coffee. Stay for the calm.",
   description:
-    "Crazy Cafe is a daytime coffee spot for early risers, lunch crowds, and anyone who wants their espresso with a side of energy.",
-  email: "hello@crazycafe.example",
+    "Crazies Cafe is a daytime neighbourhood cafe for early risers, lunch crowds, and anyone who wants good espresso in a bright, welcoming space.",
+  email: "hello@craziescafe.example",
   phone: "+61 2 5550 0199",
   phoneHref: "tel:+61255500199",
   address: {
-    street: "42 Neon Lane",
+    street: "334",
     suburb: "Surry Hills",
     state: "NSW",
     postcode: "2010",
     country: "Australia",
   },
   mapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=42+Neon+Lane+Surry+Hills+NSW+2010",
+    "https://www.google.com/maps/search/?api=1&query=334+Surry+Hills+NSW+2010",
   social: {
     instagram: "https://instagram.com",
     tiktok: "https://tiktok.com",
   },
   about: {
-    headline: "Built for mornings that mean business",
+    headline: "A neighbourhood cafe with a soft spot for mornings",
     paragraphs: [
-      "Crazy Cafe started with a simple idea: strong coffee, generous plates, and a vibe that wakes the street up — from open until close at 2pm.",
-      "Whether you are grabbing a flat white before work, meeting friends for brunch, or hunting for lunch with an edge, this is your corner of Surry Hills.",
-      "No velvet ropes. No dull hours. Just good coffee, a loud kitchen, and a soundtrack that keeps pace with the day.",
+      "Crazies Cafe started with a simple idea: strong coffee, generous plates, and a space that feels like home — open every day until 2pm.",
+      "Whether you are grabbing a flat white before work, meeting friends for brunch, or settling in by the window, this is your corner of Surry Hills.",
+      "No velvet ropes. No dull hours. Just good coffee, a sunny kitchen, and a welcome that feels familiar from day one.",
     ],
   },
   features: [
@@ -37,12 +38,12 @@ export const site = {
     {
       title: "Brunch Kitchen",
       description:
-        "Eggs, toasties, smash burgers, and more — fresh until 2:00 PM.",
+        "Eggs, bowls, toasties, and more — fresh until 2:00 PM.",
     },
     {
       title: "Walk-ins Welcome",
       description:
-        "No reservations. Grab a table inside, sit outdoors, or take away.",
+        "No reservations. Grab a booth, sit by the window, or take away.",
     },
   ],
   faqs: [

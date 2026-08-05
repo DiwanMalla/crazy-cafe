@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { Playfair_Display, DM_Sans } from "next/font/google";
+import { Fraunces, Figtree } from "next/font/google";
 import { ConvexClientProvider } from "@/components/ConvexClientProvider";
 import { site } from "@/content/site";
 import "./globals.css";
 
-const display = Playfair_Display({
+const display = Fraunces({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
 });
 
-const body = DM_Sans({
+const body = Figtree({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
