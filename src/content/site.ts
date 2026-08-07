@@ -4,19 +4,21 @@ export const site = {
     "Specialty coffee, cold-pressed juices, and all-day brunch in a sage-green neighbourhood spot — open, warm, and walk-in friendly.",
   headline: "Come for the coffee. Stay for the calm.",
   description:
-    "Crazies Cafe is a daytime neighbourhood cafe for early risers, lunch crowds, and anyone who wants good espresso in a bright, welcoming space.",
+    "Crazies Cafe is a family-owned daytime cafe in Richmond, NSW — good espresso, generous plates, and a bright welcome seven days a week.",
   email: "hello@craziescafe.example",
-  phone: "+61 2 5550 0199",
-  phoneHref: "tel:+61255500199",
+  phone: "0478 814 374",
+  phoneHref: "tel:+61478814374",
   address: {
-    street: "334",
-    suburb: "Surry Hills",
+    street: "334 Windsor St",
+    suburb: "Richmond",
     state: "NSW",
-    postcode: "2010",
+    postcode: "2753",
     country: "Australia",
   },
   mapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=334+Surry+Hills+NSW+2010",
+    "https://www.google.com/maps/search/?api=1&query=Crazies+Cafe+334+Windsor+St+Richmond+NSW+2753",
+  mapsEmbedUrl:
+    "https://www.google.com/maps?q=Crazies+Cafe,+334+Windsor+St,+Richmond+NSW+2753&z=16&output=embed",
   social: {
     instagram: "https://instagram.com",
     tiktok: "https://tiktok.com",
@@ -24,8 +26,8 @@ export const site = {
   about: {
     headline: "A neighbourhood cafe with a soft spot for mornings",
     paragraphs: [
-      "Crazies Cafe started with a simple idea: strong coffee, generous plates, and a space that feels like home — open every day until 2pm.",
-      "Whether you are grabbing a flat white before work, meeting friends for brunch, or settling in by the window, this is your corner of Surry Hills.",
+      "Crazies Cafe is a family-owned spot on Windsor Street in Richmond — strong coffee, generous plates, and a space that feels like home.",
+      "Whether you are grabbing a flat white before work, meeting friends for brunch, or settling in by the window, this is your corner of the Hawkesbury.",
       "No velvet ropes. No dull hours. Just good coffee, a sunny kitchen, and a welcome that feels familiar from day one.",
     ],
   },
@@ -33,12 +35,12 @@ export const site = {
     {
       title: "Specialty Espresso",
       description:
-        "Pours from 7:00 AM daily. Ethically sourced beans, pulled with care.",
+        "Pours from early each morning. Ethically sourced beans, pulled with care.",
     },
     {
       title: "Brunch Kitchen",
       description:
-        "Eggs, bowls, toasties, and more — fresh until 2:00 PM.",
+        "Eggs, bowls, toasties, and more — fresh through lunch service.",
     },
     {
       title: "Walk-ins Welcome",
@@ -49,7 +51,7 @@ export const site = {
   faqs: [
     {
       q: "What are your opening hours?",
-      a: "We are open 7 days a week from 7:00 AM to 2:00 PM.",
+      a: "Monday–Friday 6:00 AM – 3:00 PM, Saturday 7:00 AM – 3:00 PM, and Sunday 8:00 AM – 2:00 PM. Public holiday hours may vary.",
     },
     {
       q: "Do I need a table reservation?",

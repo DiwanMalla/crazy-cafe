@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Menu",
-  description: `Specialty coffee, all-day breakfast, and kitchen favourites at ${site.name} in Surry Hills.`,
+  description: `Specialty coffee, all-day breakfast, and kitchen favourites at ${site.name} in Richmond, NSW.`,
 };
 
 export default function MenuPage() {
@@ -64,7 +64,7 @@ export default function MenuPage() {
                 Come and taste for yourself.
               </h2>
               <p className="mt-1 text-sm text-stone">
-                Open every day, 7:00 AM – 2:00 PM. No reservations needed.
+                Open seven days. No reservations needed.
               </p>
             </div>
             <div className="cta-row shrink-0 justify-center md:justify-end">

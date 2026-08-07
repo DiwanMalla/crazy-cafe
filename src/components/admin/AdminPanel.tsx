@@ -138,19 +138,24 @@ function ConnectedAdminPanel() {
     event.preventDefault();
     setLoginError(null);
     setBusy(true);
+    const submittedPassword = loginPassword.trim();
     try {
-      await verifyPassword({ password: loginPassword });
-      setAdminPassword(loginPassword);
+      await verifyPassword({ password: submittedPassword });
+      setAdminPassword(submittedPassword);
       setLoginPassword("");
-      const result = await seedMenu({ password: loginPassword });
+      const result = await seedMenu({ password: submittedPassword });
       if (result.seeded) {
         setNotice(
           `Loaded starter menu (${result.categories} categories, ${result.items} items).`,
         );
       }
     } catch (error) {
+      const message =
+        error instanceof Error ? error.message : "Could not sign in";
       setLoginError(
-        error instanceof Error ? error.message : "Could not sign in",
+        message.includes("Invalid admin password")
+          ? "Invalid admin password. Check ADMIN_PASSWORD on your Convex deployment."
+          : message,
       );
     } finally {
       setBusy(false);

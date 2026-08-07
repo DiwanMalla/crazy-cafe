@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/ContactForm";
 import { HoursBlock } from "@/components/HoursBlock";
+import { LocationMap } from "@/components/LocationMap";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: `Find ${site.name} in Surry Hills — location, hours, and enquiry form.`,
+  description: `Find ${site.name} at 334 Windsor St, Richmond NSW — location, hours, map, and enquiry form.`,
 };
 
 export default function ContactPage() {
@@ -22,8 +23,9 @@ export default function ContactPage() {
             drop a line.
           </h1>
           <p className="animate-fade-up delay-1 mt-4 max-w-lg text-sm leading-relaxed text-cream/85 sm:mt-5 sm:text-base md:text-lg">
-            No bookings needed for coffee or a bite — just walk right in. For
-            general questions, catering enquiries, or press, use the form below.
+            Find us at 334 Windsor Street in Richmond. No bookings needed for
+            coffee or a bite — just walk right in. For general questions,
+            catering, or press, use the form below.
           </p>
         </div>
       </section>
@@ -47,6 +49,22 @@ export default function ContactPage() {
       </section>
 
       <section className="border-t border-border bg-[linear-gradient(180deg,#f7f3e9_0%,#efe9db_100%)]">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-5 sm:py-16 md:px-8 md:py-24">
+          <div className="mb-8 max-w-2xl sm:mb-10">
+            <p className="section-label">Map</p>
+            <h2 className="heading-display mt-3 text-[clamp(1.85rem,6vw,3rem)] text-foreground">
+              How to find us
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-[#5a5f54] sm:text-base">
+              We&apos;re on Windsor Street in Richmond, NSW — look for the
+              yellow awning and the number 334.
+            </p>
+          </div>
+          <LocationMap />
+        </div>
+      </section>
+
+      <section className="border-t border-border">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-5 sm:py-16 md:px-8 md:py-24">
           <p className="section-label">Common Questions</p>
           <h2 className="heading-display mb-8 mt-3 text-[clamp(1.85rem,6vw,3rem)] text-foreground sm:mb-10">

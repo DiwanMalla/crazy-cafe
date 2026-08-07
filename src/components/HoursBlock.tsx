@@ -1,4 +1,4 @@
-import { hoursBlurb } from "@/content/hours";
+import { hours, hoursBlurb } from "@/content/hours";
 import { formatAddress, site } from "@/content/site";
 
 type HoursBlockProps = {
@@ -11,17 +11,26 @@ export function HoursBlock({ showMapLink = true }: HoursBlockProps) {
       <div className="card-warm rounded-2xl p-5 sm:p-6 md:p-8">
         <p className="section-label">Opening Hours</p>
         <h2 className="heading-display mt-3 text-[clamp(1.6rem,5vw,2.25rem)] text-parchment sm:mt-4">
-          Every day,
+          Seven days,
           <br />
-          7:00 AM – 2:00 PM
+          breakfast to lunch
         </h2>
         <p className="mt-3 text-sm leading-relaxed text-stone sm:mt-4">
           {hoursBlurb}
         </p>
-        <p className="mt-6 text-sm text-cream/80 sm:mt-8">
-          Kitchen and coffee bar open the full service window. Last orders
-          before close.
-        </p>
+        <ul className="mt-6 space-y-2 border-t border-[rgba(220,230,212,0.16)] pt-5 sm:mt-8">
+          {hours.map((day) => (
+            <li
+              key={day.day}
+              className="flex items-baseline justify-between gap-4 text-sm"
+            >
+              <span className="text-cream/90">{day.day}</span>
+              <span className="text-honey">
+                {day.closed ? "Closed" : `${day.open} – ${day.close}`}
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
 
       <div className="card-light rounded-2xl p-5 sm:p-6 md:p-8">

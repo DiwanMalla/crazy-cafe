@@ -5,7 +5,7 @@ const reviews = [
     initials: "ET",
     rating: 5,
     date: "2 weeks ago",
-    text: "Best flat white in Surry Hills, hands down. The atmosphere is warm and the service is always friendly. The smash avo with za'atar is a revelation — I come back every weekend.",
+    text: "Best flat white in Richmond, hands down. The atmosphere is warm and the service is always friendly. The smash avo with za'atar is a revelation — I come back every weekend.",
     service: "Coffee & Brunch",
   },
   {
@@ -65,7 +65,7 @@ export function Reviews() {
             What Our Guests Say
           </h2>
           <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-[#5f655a] sm:mt-4 md:text-base">
-            Honest reviews from the Surry Hills community who come back every
+            Honest reviews from the Richmond community who come back every
             morning.
           </p>
           <div className="mt-5 inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-[rgba(138,155,126,0.45)] bg-[rgba(255,252,246,0.95)] px-4 py-2.5 shadow-[0_10px_24px_-18px_rgba(30,34,28,0.45)] sm:mt-7 sm:gap-3 sm:px-5">

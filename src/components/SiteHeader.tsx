@@ -55,7 +55,7 @@ export function SiteHeader() {
                 {site.name}
               </span>
               <span className="section-label mt-1 hidden text-[0.58rem] text-latte/90 sm:block">
-                Specialty Coffee · Surry Hills
+                Specialty Coffee · Richmond
               </span>
             </Link>
 
@@ -174,7 +174,7 @@ export function SiteHeader() {
           <a href={site.phoneHref} className="block text-sm text-cream">
             {site.phone}
           </a>
-          <p className="text-xs text-stone">Open daily 7:00 AM – 2:00 PM</p>
+          <p className="text-xs text-stone">Open seven days · breakfast to lunch</p>
           <Link
             href="/contact"
             onClick={closeMenu}

@@ -5,7 +5,7 @@ import { site } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "About",
-  description: `The story behind ${site.name} — great specialty coffee and good vibes in Surry Hills.`,
+  description: `The story behind ${site.name} — great specialty coffee and good vibes in Richmond, NSW.`,
 };
 
 export default function AboutPage() {
@@ -14,7 +14,7 @@ export default function AboutPage() {
       <section className="relative min-h-[50svh] overflow-hidden sm:min-h-[58vh] md:min-h-[68vh]">
         <Image
           src="/cafe/dining-room.png"
-          alt="Warm interior of Crazies Cafe in Surry Hills"
+          alt="Warm interior of Crazies Cafe in Richmond"
           fill
           priority
           className="object-cover object-center"
@@ -64,11 +64,11 @@ export default function AboutPage() {
                   {
                     label: "Open",
                     value: "7 Days a Week",
-                    sub: "7:00 AM – 2:00 PM",
+                    sub: "Breakfast to lunch",
                   },
                   {
                     label: "Location",
-                    value: "Surry Hills, NSW",
+                    value: "Richmond, NSW",
                     sub: site.address.street,
                   },
                   {
